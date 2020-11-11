@@ -1,28 +1,34 @@
 <template>
   <div>
-    <div v-if="!loading && fields" class="fields">
-      <div v-for="field in fields" :key="field.id" class="field__wrapper">
-        <span v-if="field.title" class="title">{{ field.title }}</span>
-        <br />
-        <select
-          v-if="field.type === 'combobox' && selected[field.id]"
-          v-model="selected[field.id].value"
-          :disabled="selected[field.id].isDisabled"
-          @change="checkEnable"
-        >
-          <option
-            v-for="item in field.values"
-            :key="item.id"
-            v-bind:value="item.id"
-            >{{ item.label }}
-          </option>
-        </select>
-        <input
-          v-if="field.type === 'date' && selected[field.id]"
-          v-model="selected[field.id].value"
-          type="text"
-        />
+    <div v-if="!loading && fields">
+      <div class="fields">
+        <div v-for="field in fields" :key="field.id" class="field__wrapper">
+          <span v-if="field.title" class="title">{{ field.title }}</span>
+          <br />
+          <select
+            v-if="field.type === 'combobox' && selected[field.id]"
+            v-model="selected[field.id].value"
+            :disabled="selected[field.id].isDisabled"
+            @change="checkEnable"
+          >
+            <option
+              v-for="item in field.values"
+              :key="item.id"
+              v-bind:value="item.id"
+              >{{ item.label }}
+            </option>
+          </select>
+          <input
+            v-if="field.type === 'date' && selected[field.id]"
+            v-model="selected[field.id].value"
+            type="text"
+          />
+        </div>
       </div>
+      <span
+        >Selected<br />
+        {{ selected }}</span
+      >
     </div>
 
     <span v-else>Loading...</span>
