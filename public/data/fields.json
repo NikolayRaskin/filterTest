@@ -1,0 +1,109 @@
+[
+  {
+    "type": "combobox",
+    "id": "maptype",
+    "title": "",
+    "values": [
+      {
+        "id": "global",
+        "label": "Global Atlas"
+      },
+      {
+        "id": "regional",
+        "label": "Regional Atlas"
+      }
+    ],
+    "default": "global"
+  },
+  {
+    "type": "combobox",
+    "id": "countryGroup",
+    "title": "Country group",
+    "values": [
+      {
+        "id": "europe",
+        "label": "Europe"
+      },
+      {
+        "id": "northAmerica",
+        "label": "North America"
+      }
+    ],
+    "default": "northAmerica"
+  },
+  {
+    "type": "combobox",
+    "id": "country",
+    "title": "Country",
+    "values": [
+      {
+        "id": "germany",
+        "label": "Germany"
+      },
+      {
+        "id": "belarus",
+        "label": "Belarus"
+      }
+    ],
+    "default": "belarus"
+  },
+  {
+    "type": "combobox",
+    "id": "dataType",
+    "title": "Data Type",
+    "values": [
+      {
+        "id": "historical",
+        "label": "Historical"
+      }
+    ],
+    "default": "historical",
+    "disabled": [
+      {
+        "maptype": "global"
+      },
+      {
+        "country": "germany"
+      }
+    ]
+  },
+  {
+    "type": "combobox",
+    "id": "timeRange",
+    "title": "Time Range",
+    "values": [
+      {
+        "id": "seasonalData",
+        "label": "Seasonal Data"
+      }
+    ],
+    "default": "seasonalData",
+    "disabled": [
+      {
+        "maptype": "global"
+      },
+      {
+        "dataType": "historical"
+      }
+    ]
+  },
+  {
+    "type": "combobox",
+    "id": "season",
+    "title": "Season",
+    "values": [
+      {
+        "id": "decJanFeb",
+        "label": "Dec - Jan - Feb"
+      }
+    ],
+    "default": "decJanFeb"
+  },
+  {
+    "type": "date",
+    "id": "timeFrame",
+    "title": "Time Frame",
+    "value": "",
+    "default": "2020-2021"
+  }
+]
